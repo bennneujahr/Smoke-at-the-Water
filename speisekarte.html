@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speisekarte – Smoke at the Water Schwerin</title>
+  <meta name="description" content="Alle Gerichte und Preise bei Smoke at the Water – Strandimbiss am Zippendorfer Strand in Schwerin. Grill, Pizza und mehr.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Speisekarte – Smoke at the Water Schwerin">
+  <meta property="og:description" content="Entdecke unser Stammsortiment, Pizza und aktuelle Preise.">
+  <meta property="og:image"       content="Preis- und Speisekarten/Speisekarte Stammsortiment.png">
+
+  <link rel="icon" href="Logos/Logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="index.html" class="nav__logo" aria-label="Smoke at the Water – Zur Startseite">
+        <img src="Logos/Logo.png" alt="Smoke at the Water" width="52" height="52">
+      </a>
+      <ul class="nav__links" id="nav-menu" role="list">
+        <li><a href="speisekarte.html" class="active" aria-current="page">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <button
+        class="nav__hamburger"
+        id="hamburger"
+        aria-expanded="false"
+        aria-label="Menü öffnen"
+        aria-controls="nav-menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero" aria-label="Seitentitel">
+      <div class="page-hero__inner">
+        <h1>Speisekarte</h1>
+        <p>Frisch vom Rost, aus dem Ofen und direkt zum Mitnehmen</p>
+      </div>
+    </section>
+
+    <!-- ── MENU CARDS ── -->
+    <section class="section section--white" aria-labelledby="speisekarte-heading">
+      <div class="container">
+
+        <header class="section__header reveal">
+          <span class="section__label">Was gibt es?</span>
+          <h2 class="section__title" id="speisekarte-heading">Unsere Karten &amp; Preise</h2>
+          <p class="section__subtitle">Klick auf eine Karte für die Vollansicht. Alle Preise inklusive MwSt.</p>
+        </header>
+
+        <div class="menu-grid">
+
+          <!-- Stammsortiment -->
+          <div class="menu-card reveal" aria-label="Speisekarte Stammsortiment vergrößern">
+            <div class="menu-card__img-wrap">
+              <img
+                src="Preis- und Speisekarten/Speisekarte Stammsortiment.png"
+                alt="Speisekarte Stammsortiment – Grill, Snacks und Getränke"
+                loading="lazy"
+              >
+            </div>
+            <div class="menu-card__info">
+              <h3>Stammsortiment</h3>
+              <p>Grill, Snacks, Beilagen &amp; Getränke</p>
+              <span class="menu-card__zoom" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+                Vergrößern
+              </span>
+            </div>
+          </div>
+
+          <!-- Pizza -->
+          <div class="menu-card reveal reveal-delay-1" aria-label="Speisekarte Pizza vergrößern">
+            <div class="menu-card__img-wrap">
+              <img
+                src="Preis- und Speisekarten/Speisekarte Pizza.png"
+                alt="Speisekarte Pizza – alle Sorten und Preise"
+                loading="lazy"
+              >
+            </div>
+            <div class="menu-card__info">
+              <h3>Pizza</h3>
+              <p>Knusprige Pizzen aus dem Steinofen</p>
+              <span class="menu-card__zoom" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+                Vergrößern
+              </span>
+            </div>
+          </div>
+
+          <!-- Preisliste 1 -->
+          <div class="menu-card reveal reveal-delay-2" aria-label="Preisliste Seite 1 vergrößern">
+            <div class="menu-card__img-wrap">
+              <img
+                src="Preis- und Speisekarten/Schaukasten 1.png"
+                alt="Schaukasten 1 – Alle Preise im Überblick"
+                loading="lazy"
+              >
+            </div>
+            <div class="menu-card__info">
+              <h3>Preisliste – Seite 1</h3>
+              <p>Alle Preise auf einen Blick</p>
+              <span class="menu-card__zoom" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+                Vergrößern
+              </span>
+            </div>
+          </div>
+
+          <!-- Preisliste 2 -->
+          <div class="menu-card reveal reveal-delay-3" aria-label="Preisliste Seite 2 vergrößern">
+            <div class="menu-card__img-wrap">
+              <img
+                src="Preis- und Speisekarten/Schaukasten 2.png"
+                alt="Schaukasten 2 – Alle Preise im Überblick"
+                loading="lazy"
+              >
+            </div>
+            <div class="menu-card__info">
+              <h3>Preisliste – Seite 2</h3>
+              <p>Weitere Preise im Überblick</p>
+              <span class="menu-card__zoom" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+                Vergrößern
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section section--sand">
+      <div class="container" style="text-align: center;">
+        <div class="reveal">
+          <span class="section__label">Hungrig geworden?</span>
+          <h2 class="section__title">Wir warten auf dich!</h2>
+          <p class="section__subtitle" style="margin-bottom: 2rem;">Direkt am Zippendorfer Strand – einfach vorbeikommen.</p>
+          <a href="kontakt.html" class="btn btn--primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Öffnungszeiten &amp; Anfahrt
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" aria-label="Seitenende">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="Logos/Logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
+        <address>
+          Smoke at the Water<br>
+          Zippendorfer Strand<br>
+          19063 Schwerin
+        </address>
+      </div>
+      <div class="footer__social" aria-label="Social Media">
+        <span class="footer__social-label">Folge uns</span>
+        <a href="https://www.instagram.com/smoke_at_the_water/" aria-label="Instagram" title="Instagram" rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="https://share.google/wbqceInN0S07DFE3K" aria-label="Google Bewertungen" title="Google Bewertungen" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </a>
+      </div>
+      <nav class="footer__legal" aria-label="Rechtliche Links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <p class="footer__copy">
+      &copy; <span id="year"></span> Smoke at the Water. Alle Rechte vorbehalten.
+    </p>
+  </footer>
+
+  <!-- ── LIGHTBOX ── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau" hidden>
+    <div class="lightbox__overlay"></div>
+    <div class="lightbox__content">
+      <button class="lightbox__close" aria-label="Lightbox schließen">&times;</button>
+      <img class="lightbox__img" src="" alt="">
+    </div>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>

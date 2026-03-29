@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i '' 's|<img src=\"\"Logos/Logo_Schriftzug.png\"\" alt=\"\"Smoke at the Water\"\" width=\"\"160\"\" height=\"\"44\"\">|<img src=\"\"Logos/Logo.png\"\" alt=\"\"Smoke at the Water\"\" width=\"\"52\"\" height=\"\"52\"\">|g' \"$f\")",
+      "Bash(echo \"$f: OK\")",
+      "Bash(done)"
+    ]
+  }
+}
