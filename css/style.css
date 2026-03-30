@@ -1011,7 +1011,59 @@ p  { line-height: 1.75; max-width: 65ch; }
 }
 
 
-/* ── 13e. CONTENT CENTERED ── */
+/* ── 13e. BANNER CTA ── */
+.banner-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.banner-cta-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  display: block;
+}
+.banner-cta-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  background-color: var(--color-blue);
+  border-radius: 0 0 var(--r-xl) var(--r-xl);
+  overflow: hidden;
+}
+.banner-cta-buttons .btn {
+  border-radius: 0;
+  padding: 1.25rem 2rem;
+  font-size: 1.0625rem;
+  justify-content: center;
+  border: none;
+}
+.banner-cta-buttons .btn:first-child {
+  background-color: var(--color-amber);
+  border-right: 2px solid rgba(255,255,255,0.2);
+}
+.banner-cta-buttons .btn:first-child:hover {
+  background-color: var(--color-amber-dark);
+}
+.banner-cta-buttons .btn:last-child {
+  background-color: var(--color-blue);
+  border: none;
+}
+.banner-cta-buttons .btn:last-child:hover {
+  background-color: var(--color-blue-dark);
+}
+@media (max-width: 480px) {
+  .banner-cta-buttons {
+    grid-template-columns: 1fr;
+  }
+  .banner-cta-buttons .btn:first-child {
+    border-right: none;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+  }
+}
+
+/* ── 13f. CONTENT CENTERED ── */
 .content-centered {
   text-align: center;
 }
