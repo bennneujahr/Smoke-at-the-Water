@@ -926,6 +926,10 @@ p  { line-height: 1.75; max-width: 65ch; }
   background-color: var(--color-sand);
   border-radius: var(--r-xl);
   padding: var(--space-md);
+  transition: box-shadow var(--t-base);
+}
+.info-card:hover {
+  box-shadow: 0 6px 24px rgba(26,58,92,0.10);
 }
 .info-card h3 {
   color: var(--color-blue);

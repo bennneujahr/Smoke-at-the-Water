@@ -115,7 +115,7 @@ Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.i
 
 These need real values before going live:
 
-- **events.html, verleih.html** – not yet linked in the navigation (will be added in a later step)
-- **index.html, speisekarte.html, kontakt.html, events.html, verleih.html** – `og:url` needs an absolute URL once the domain is confirmed
-- **impressum.html** – all `[...]` fields (name, address, phone, email, USt-IdNr.)
-- **datenschutz.html** – all `[...]` fields
+- **Alle Seiten** – `DEINE-DOMAIN.de` in `<link rel="canonical">`, `sitemap.xml`, `robots.txt` und JSON-LD durch echte Domain ersetzen. Danach auch `og:url` auf allen Seiten ergänzen.
+- **impressum.html** – alle `[...]` Felder (Name, Adresse, Telefon, E-Mail, USt-IdNr.)
+- **datenschutz.html** – alle `[...]` Felder
+- **index.html JSON-LD** – `"telephone"` Feld mit echter Telefonnummer ergänzen wenn vorhanden

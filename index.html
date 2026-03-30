@@ -18,6 +18,59 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lokales SEO -->
+  <meta name="geo.region" content="DE-MV">
+  <meta name="geo.placename" content="Schwerin">
+  <meta name="geo.position" content="53.602555;11.453974">
+  <meta name="ICBM" content="53.602555, 11.453974">
+  <!-- TODO: DEINE-DOMAIN.de durch echte Domain ersetzen (auch og:url unten ergänzen) -->
+  <link rel="canonical" href="https://DEINE-DOMAIN.de/">
+
+  <!-- Strukturierte Daten: Restaurant & Standort -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Restaurant", "FoodEstablishment"],
+    "name": "Smoke at the Water",
+    "description": "Strandimbiss am Zippendorfer Strand in Schwerin. Frisch Gegrilltes, Pizza und eiskalte Getränke mit Blick auf den Schweriner See.",
+    "url": "https://DEINE-DOMAIN.de",
+    "image": "https://DEINE-DOMAIN.de/Bilder%20vom%20Imbiss/Bild%20Imbiss.jpeg",
+    "servesCuisine": ["Grill", "Pizza", "Fast Food"],
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Am Strand 5a",
+      "addressLocality": "Schwerin",
+      "postalCode": "19063",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 53.6025554,
+      "longitude": 11.4539735
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "10:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "10:00",
+        "closes": "19:00"
+      }
+    ],
+    "hasMenu": "https://DEINE-DOMAIN.de/speisekarte.html",
+    "sameAs": [
+      "https://www.instagram.com/smoke_at_the_water/",
+      "https://share.google/wbqceInN0S07DFE3K"
+    ]
+  }
+  </script>
 </head>
 <body>
 
