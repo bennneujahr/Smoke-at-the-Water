@@ -49,7 +49,7 @@ Assets live in German-named folders at the root – paths with spaces work fine 
 
 
 - `Logos/` – `Logo.png`, `Logo_Schriftzug.png`
-- `Bilder vom Imbiss/` – `Bild Imbiss.jpeg` … `Bild Imbiss14.jpeg`, `Plakat DJ-Abende.png`, `Plakat Beach-Rental.png`, `Event Banner.png`
+- `Bilder vom Imbiss/` – `Bild Imbiss.jpeg` … `Bild Imbiss14.jpeg`, `Plakat DJ-Abende.png`, `Plakat Beach-Rental.png`, `Banner Webseite.png`
 - `Preis- und Speisekarten/` – `Speisekarte Stammsortiment.png`, `Speisekarte Pizza.png`, `Preisliste Aushang_1.jpeg`, `Preisliste Aushang_2.jpeg`
 
 ## CSS conventions
