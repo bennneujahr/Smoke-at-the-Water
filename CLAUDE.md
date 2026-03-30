@@ -115,7 +115,7 @@ Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.i
 
 These need real values before going live:
 
-- **Alle Seiten** – `DEINE-DOMAIN.de` in `<link rel="canonical">`, `sitemap.xml`, `robots.txt` und JSON-LD durch echte Domain ersetzen. Danach auch `og:url` auf allen Seiten ergänzen.
+- **Alle Seiten** – `og:url` auf allen Seiten noch auf `https://smokeatthewater.de/PAGE.html` setzen (aktuell noch nicht gesetzt)
 - **impressum.html** – alle `[...]` Felder (Name, Adresse, Telefon, E-Mail, USt-IdNr.)
 - **datenschutz.html** – alle `[...]` Felder
 - **index.html JSON-LD** – `"telephone"` Feld mit echter Telefonnummer ergänzen wenn vorhanden

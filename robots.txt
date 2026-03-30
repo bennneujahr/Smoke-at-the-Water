@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # TODO: DEINE-DOMAIN.de durch echte Domain ersetzen
-Sitemap: https://DEINE-DOMAIN.de/sitemap.xml
+Sitemap: https://smokeatthewater.de/sitemap.xml
