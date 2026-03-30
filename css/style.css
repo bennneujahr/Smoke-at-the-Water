@@ -103,6 +103,10 @@ h2 { font-size: clamp(1.875rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 h4 { font-size: 1.125rem; }
 p  { line-height: 1.75; max-width: 65ch; }
+.section__header p {
+  text-align: center;
+  margin-inline: auto;
+}
 
 
 /* ── 4. UTILITIES ── */
@@ -147,13 +151,15 @@ p  { line-height: 1.75; max-width: 65ch; }
   margin-bottom: var(--space-xs);
 }
 .section__title {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 .section__subtitle {
   color: var(--color-muted);
   font-size: 1.0625rem;
   max-width: 50ch;
   margin-inline: auto;
+  text-align: center;
 }
 
 /* Buttons */
