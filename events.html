@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Abende – Smoke at the Water Schwerin</title>
+  <meta name="description" content="Jeden Samstagabend von Mai bis September: Live DJ-Musik direkt am Zippendorfer Strand in Schwerin. Eiskalte Getränke, frisch Gegrilltes und beste Stimmung.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="DJ Abende – Smoke at the Water Schwerin">
+  <meta property="og:description" content="Jeden Samstagabend von Mai bis September – Live DJ, Grill & Drinks direkt am Schweriner See.">
+  <meta property="og:image"       content="Bilder vom Imbiss/Plakat DJ-Abende.png">
+
+  <link rel="icon" href="Logos/Logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="index.html" class="nav__logo" aria-label="Smoke at the Water – Zur Startseite">
+        <img src="Logos/Logo.png" alt="Smoke at the Water" width="52" height="52">
+      </a>
+      <ul class="nav__links" id="nav-menu" role="list">
+        <li><a href="speisekarte.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <button
+        class="nav__hamburger"
+        id="hamburger"
+        aria-expanded="false"
+        aria-label="Menü öffnen"
+        aria-controls="nav-menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section
+      class="page-hero page-hero--img"
+      style="background-image: url('Bilder vom Imbiss/Plakat DJ-Abende.png')"
+      aria-label="Seitentitel"
+    >
+      <div class="page-hero__inner">
+        <h1>DJ Abende</h1>
+        <p>Jeden Samstag von Mai bis September</p>
+      </div>
+    </section>
+
+    <!-- ── INHALT ── -->
+    <section class="section section--white" aria-labelledby="events-heading">
+      <div class="container">
+
+        <img
+          class="event-img reveal"
+          src="Bilder vom Imbiss/Plakat DJ-Abende.png"
+          alt="Plakat DJ Abende – Smoke at the Water"
+          loading="lazy"
+        >
+
+        <div style="max-width: 680px; margin-inline: auto; text-align: center;">
+          <h2 id="events-heading">Musik, Strand &amp; gutes Essen</h2>
+          <p>Von Mai bis September heizen wir jeden Samstagabend den Strand auf! Live DJ-Musik direkt am Zippendorfer Strand – genieße eiskalte Getränke, frisch Gegrilltes und die beste Stimmung am Schweriner See. Komm vorbei und erlebe unvergessliche Sommerabende.</p>
+          <a href="kontakt.html" class="btn btn--primary" style="margin-top: var(--space-md);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Zum Kontakt &amp; Anfahrt
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" aria-label="Seitenende">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="Logos/Logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
+        <address>
+          Smoke at the Water<br>
+          Am Strand 5a<br>
+          19063 Schwerin
+        </address>
+      </div>
+      <div class="footer__social" aria-label="Social Media">
+        <span class="footer__social-label">Folge uns</span>
+        <a href="https://www.instagram.com/smoke_at_the_water/" aria-label="Instagram" title="Instagram" rel="noopener noreferrer" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="https://share.google/wbqceInN0S07DFE3K" aria-label="Google Bewertungen" title="Google Bewertungen" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </a>
+      </div>
+      <nav class="footer__legal" aria-label="Rechtliche Links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <p class="footer__copy">
+      &copy; <span id="year"></span> Smoke at the Water. Alle Rechte vorbehalten.
+    </p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>

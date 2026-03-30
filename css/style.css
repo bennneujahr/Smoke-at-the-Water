@@ -882,6 +882,61 @@ p  { line-height: 1.75; max-width: 65ch; }
 }
 
 
+/* ── 13b. PAGE-HERO WITH IMAGE ── */
+.page-hero--img {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding-block: calc(var(--space-xl) * 1.5);
+}
+.page-hero--img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,58,92,0.65) 0%,
+    rgba(26,58,92,0.45) 100%
+  );
+}
+.page-hero--img .page-hero__inner {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ── 13c. EVENT / VERLEIH PAGES ── */
+.event-img {
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  margin-inline: auto;
+  border-radius: var(--r-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+@media (max-width: 600px) { .info-cards { grid-template-columns: 1fr; } }
+
+.info-card {
+  background-color: var(--color-sand);
+  border-radius: var(--r-xl);
+  padding: var(--space-md);
+}
+.info-card h3 {
+  color: var(--color-blue);
+  margin-bottom: 0.5rem;
+}
+.info-card p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+
 /* ── 14. LIGHTBOX ── */
 .lightbox {
   position: fixed;
