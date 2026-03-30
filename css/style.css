@@ -1011,6 +1011,23 @@ p  { line-height: 1.75; max-width: 65ch; }
 }
 
 
+/* ── 13e. CONTENT CENTERED ── */
+.content-centered {
+  text-align: center;
+}
+.content-centered h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+}
+.content-centered p {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+
 /* ── 14. LIGHTBOX ── */
 .lightbox {
   position: fixed;
