@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-Static website for **Smoke at the Water** – a beach food stall (Strandimbiss) at Zippendorfer Strand in Schwerin, Germany. Domain: `https://smokeatthewater.de`. Deployed on Netlify. No build step, no framework, no package manager.
+Static website for **Smoke at the Water** – a beach food stall (Strandimbiss) at Zippendorfer Strand in Schwerin, Germany. Domain: `https://smokeatthewater.de`. Hosted on GitHub Pages. No build step, no framework, no package manager.
 
 ## How to preview
 
@@ -23,7 +23,14 @@ python3 -m http.server 8080
 
 ## Deployment
 
-Push to the connected Git repository. Netlify auto-deploys from the root (`publish = "."`).
+Hosted on **GitHub Pages** (kostenlos, kein Build-Limit).
+
+- Repository: `bennneujahr/Smoke-at-the-Water`
+- Custom Domain: `smokeatthewater.de` (via `CNAME`-Datei im Root)
+- Deploy: automatisch bei jedem `git push` auf `main`
+- DNS: A-Record bei STRATO → `185.199.108.153`
+
+Ein einfaches `git push` genügt – kein Build-Schritt, kein Dashboard.
 
 ## Architecture
 
