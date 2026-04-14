@@ -11,9 +11,10 @@
   <meta property="og:title"       content="Smoke at the Water – Strandimbiss Schwerin">
   <meta property="og:description" content="Frisch Gegrilltes, Pizza und eiskalte Getränke direkt am Schweriner See.">
   <meta property="og:url"         content="https://smokeatthewater.de/">
-  <meta property="og:image"       content="https://smokeatthewater.de/Bilder%20vom%20Imbiss/Bild%20Imbiss.jpeg">
+  <meta property="og:image"       content="https://smokeatthewater.de/Bilder%20vom%20Imbiss/optimized/bild-imbiss.jpeg">
 
-  <link rel="icon" href="Logos/Logo.png" type="image/png">
+  <link rel="icon" href="Logos/optimized/logo.png" type="image/png">
+  <link rel="preload" as="image" href="Bilder vom Imbiss/optimized/bild-imbiss.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
     "name": "Smoke at the Water",
     "description": "Strandimbiss am Zippendorfer Strand in Schwerin. Frisch Gegrilltes, Pizza und eiskalte Getränke mit Blick auf den Schweriner See.",
     "url": "https://smokeatthewater.de",
-    "image": "https://smokeatthewater.de/Bilder%20vom%20Imbiss/Bild%20Imbiss.jpeg",
+    "image": "https://smokeatthewater.de/Bilder%20vom%20Imbiss/optimized/bild-imbiss.jpeg",
     "servesCuisine": ["Grill", "Pizza", "Fast Food"],
     "priceRange": "€€",
     "address": {
@@ -78,7 +79,7 @@
   <header class="site-header" id="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html" class="nav__logo" aria-label="Smoke at the Water – Zur Startseite">
-        <img src="Logos/Logo.png" alt="Smoke at the Water" width="52" height="52">
+        <img src="Logos/optimized/logo.png" alt="Smoke at the Water" width="52" height="52">
       </a>
       <ul class="nav__links" id="nav-menu" role="list">
         <li><a href="speisekarte.html">Speisekarte</a></li>
@@ -106,7 +107,7 @@
     <section class="hero" aria-label="Willkommen bei Smoke at the Water">
       <div
         class="hero__bg"
-        style="background-image: url('Bilder vom Imbiss/Bild Imbiss.jpeg')"
+        style="background-image: url('Bilder vom Imbiss/optimized/bild-imbiss.jpeg')"
         role="img"
         aria-label="Smoke at the Water Imbiss am Zippendorfer Strand"
       ></div>
@@ -136,11 +137,16 @@
       <div class="container">
         <div class="about__grid">
           <div class="about__img reveal">
-            <img
-              src="Bilder vom Imbiss/Bild Imbiss2.jpeg"
-              alt="Der Smoke at the Water Imbiss am Zippendorfer Strand"
-              loading="lazy"
-            >
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss2.webp" type="image/webp">
+              <img
+                src="Bilder vom Imbiss/optimized/bild-imbiss2.jpeg"
+                alt="Der Smoke at the Water Imbiss am Zippendorfer Strand"
+                loading="lazy"
+                width="1200"
+                height="800"
+              >
+            </picture>
           </div>
           <div class="about__text reveal reveal-delay-1">
             <span class="section__label">Unser Imbiss</span>
@@ -162,12 +168,17 @@
     <section class="section section--white" aria-labelledby="events-banner-heading">
       <div class="container">
         <div class="banner-cta-wrap reveal">
-          <img
-            src="Bilder vom Imbiss/Banner Website.png"
-            alt="Smoke at the Water – Events und Beach-Rental 2026"
-            class="banner-cta-img"
-            loading="lazy"
-          >
+          <picture>
+            <source srcset="Bilder%20vom%20Imbiss/optimized/banner-website.webp" type="image/webp">
+            <img
+              src="Bilder vom Imbiss/optimized/banner-website.png"
+              alt="Smoke at the Water – Events und Beach-Rental 2026"
+              class="banner-cta-img"
+              loading="lazy"
+              width="1200"
+              height="444"
+            >
+          </picture>
           <div class="banner-cta-buttons">
             <a href="events.html" class="btn btn--primary">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -197,7 +208,10 @@
 
         <div class="gallery__grid">
           <div class="gallery-item reveal" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss3.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss3.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss3.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -206,7 +220,10 @@
             </div>
           </div>
           <div class="gallery-item reveal reveal-delay-1" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss4.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss4.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss4.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -215,7 +232,10 @@
             </div>
           </div>
           <div class="gallery-item reveal reveal-delay-2" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss5.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss5.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss5.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -224,7 +244,10 @@
             </div>
           </div>
           <div class="gallery-item reveal" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss6.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss6.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss6.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -233,7 +256,10 @@
             </div>
           </div>
           <div class="gallery-item reveal reveal-delay-1" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss7.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss7.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss7.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -242,7 +268,10 @@
             </div>
           </div>
           <div class="gallery-item reveal reveal-delay-2" aria-label="Bild vergrößern">
-            <img src="Bilder vom Imbiss/Bild Imbiss8.jpeg" alt="Imbiss Impressionen" loading="lazy">
+            <picture>
+              <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss8.webp" type="image/webp">
+              <img src="Bilder vom Imbiss/optimized/bild-imbiss8.jpeg" alt="Imbiss Impressionen" loading="lazy" width="800" height="533">
+            </picture>
             <div class="gallery-item__overlay" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -257,7 +286,7 @@
     <!-- ── CTA BANNER ── -->
     <section
       class="cta-banner"
-      style="background-image: url('Bilder vom Imbiss/Bild Imbiss9jpeg.jpeg')"
+      style="background-image: url('Bilder vom Imbiss/optimized/bild-imbiss9.jpeg')"
       aria-label="Besuche uns"
     >
       <div class="cta-banner__content reveal">
@@ -278,7 +307,7 @@
   <footer class="footer" aria-label="Seitenende">
     <div class="footer__inner">
       <div class="footer__brand">
-        <img src="Logos/Logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
+        <img src="Logos/optimized/logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
         <address>
           Smoke at the Water<br>
           Am Strand 5a<br>

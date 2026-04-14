@@ -55,8 +55,13 @@ datenschutz.html  – GDPR text (vollständig ausgefüllt)
 Assets live in German-named folders at the root – paths with spaces work fine in HTML `src`/`href` attributes, but **must be quoted in CSS `url()`**:
 `background-image: url('Bilder vom Imbiss/Bild.jpeg')` ✓ — unquoted breaks CSS parsing.
 
+**`srcset`-Attribute erfordern `%20` statt Leerzeichen** – `srcset` nutzt Leerzeichen als Trennzeichen zwischen URL und Deskriptor:
+`srcset="Bilder%20vom%20Imbiss/optimized/bild.webp"` ✓ — mit Leerzeichen bricht das Parsing.
+
 - `Logos/` – `Logo.png`, `Logo_Schriftzug.png`
-- `Bilder vom Imbiss/` – `Bild Imbiss.jpeg` … `Bild Imbiss14.jpeg`, `Plakat DJ-Abende.png`, `Plakat Beach-Rental.png`, `Banner Website.png`
+- `Logos/optimized/` – `logo.png` (104×104), `logo.webp`
+- `Bilder vom Imbiss/` – Originale (volle Kamera-Auflösung, nicht direkt eingebunden)
+- `Bilder vom Imbiss/optimized/` – **Aktiv genutzt.** Verkleinerte Versionen in kebab-case (z.B. `bild-imbiss3.webp`). WebP + JPEG/PNG Fallback.
 - `Preis- und Speisekarten/` – `Speisekarte Stammsortiment.png`, `Speisekarte Pizza.png`, `Preisliste Aushang_1.jpeg`, `Preisliste Aushang_2.jpeg`
 
 ## CSS conventions
@@ -100,6 +105,14 @@ The lightbox (`#lightbox`) is triggered by any element with class `.gallery-item
 
 Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.is-visible` when the element enters the viewport. Staggered delays: `.reveal-delay-1`, `.reveal-delay-2`, `.reveal-delay-3`.
 
+## When adding new images
+
+1. Originale in den passenden Ordner legen (z.B. `Bilder vom Imbiss/`).
+2. Optimierte Versionen erstellen: `sips -Z <breite> "Original.jpeg" --out "optimized/name.jpeg"` + `cwebp -q 75 "optimized/name.jpeg" -o "optimized/name.webp"`.
+3. In HTML als `<picture>` einbinden mit WebP-Source und JPEG/PNG-Fallback. Immer `width`, `height` und `loading="lazy"` setzen.
+4. Für CSS `background-image`: nur optimiertes JPEG verwenden (kein WebP möglich).
+5. Dateinamen in `optimized/`: lowercase-kebab-case ohne Leerzeichen.
+
 ## When adding a new page
 
 1. Copy the `<header>` and `<footer>` blocks from any existing page.
@@ -112,5 +125,4 @@ Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.i
 ## Open TODO items
 
 - **Alle Seiten** – `og:url` noch auf `https://smokeatthewater.de/PAGE.html` setzen (aktuell nicht gesetzt)
-- **index.html JSON-LD** – `"telephone"` Feld mit echter Telefonnummer ergänzen
-- **events.html JSON-LD** – Event-Daten jährlich aktualisieren (aktuell: Sommer 2025)
+- **events.html JSON-LD** – Event-Daten jährlich aktualisieren (aktuell: Sommer 2026)

@@ -10,9 +10,9 @@
   <meta property="og:title"       content="Kontakt &amp; Öffnungszeiten – Smoke at the Water Schwerin">
   <meta property="og:description" content="Öffnungszeiten und Anfahrt: Zippendorfer Strand, 19063 Schwerin.">
   <meta property="og:url"         content="https://smokeatthewater.de/kontakt.html">
-  <meta property="og:image"       content="https://smokeatthewater.de/Bilder%20vom%20Imbiss/Bild%20Imbiss10.jpeg">
+  <meta property="og:image"       content="https://smokeatthewater.de/Bilder%20vom%20Imbiss/optimized/bild-imbiss10.jpeg">
 
-  <link rel="icon" href="Logos/Logo.png" type="image/png">
+  <link rel="icon" href="Logos/optimized/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
   <header class="site-header" id="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="index.html" class="nav__logo" aria-label="Smoke at the Water – Zur Startseite">
-        <img src="Logos/Logo.png" alt="Smoke at the Water" width="52" height="52">
+        <img src="Logos/optimized/logo.png" alt="Smoke at the Water" width="52" height="52">
       </a>
       <ul class="nav__links" id="nav-menu" role="list">
         <li><a href="speisekarte.html">Speisekarte</a></li>
@@ -155,16 +155,26 @@
 
         <!-- Stimmungsbilder -->
         <div class="contact-images reveal">
-          <img
-            src="Bilder vom Imbiss/Bild Imbiss10.jpeg"
-            alt="Smoke at the Water – Stimmung am Strand"
-            loading="lazy"
-          >
-          <img
-            src="Bilder vom Imbiss/Bild Imbiss11.jpeg"
-            alt="Smoke at the Water – Blick auf den Imbiss"
-            loading="lazy"
-          >
+          <picture>
+            <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss10.webp" type="image/webp">
+            <img
+              src="Bilder vom Imbiss/optimized/bild-imbiss10.jpeg"
+              alt="Smoke at the Water – Stimmung am Strand"
+              loading="lazy"
+              width="900"
+              height="600"
+            >
+          </picture>
+          <picture>
+            <source srcset="Bilder%20vom%20Imbiss/optimized/bild-imbiss11.webp" type="image/webp">
+            <img
+              src="Bilder vom Imbiss/optimized/bild-imbiss11.jpeg"
+              alt="Smoke at the Water – Blick auf den Imbiss"
+              loading="lazy"
+              width="900"
+              height="600"
+            >
+          </picture>
         </div>
 
       </div>
@@ -176,7 +186,7 @@
   <footer class="footer" aria-label="Seitenende">
     <div class="footer__inner">
       <div class="footer__brand">
-        <img src="Logos/Logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
+        <img src="Logos/optimized/logo.png" alt="Smoke at the Water Logo" width="52" height="52" loading="lazy">
         <address>
           Smoke at the Water<br>
           Zippendorfer Strand<br>
