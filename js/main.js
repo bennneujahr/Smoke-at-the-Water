@@ -3,6 +3,7 @@
    A) Navigation: Hamburger + Scroll Shadow
    B) Scroll Animations: IntersectionObserver
    C) Lightbox: Gallery + Menu Cards
+   D) Maps 2-Klick-Opt-In (DSGVO)
    ============================================== */
 
 'use strict';
@@ -162,5 +163,29 @@
       e.preventDefault();
       closeBtn.focus();
     }
+  });
+})();
+
+
+/* ── D) GOOGLE MAPS OPT-IN (2-Klick-Lösung) ── */
+(function initMapsOptIn() {
+  var placeholder = document.getElementById('maps-optin');
+  var loadBtn     = document.getElementById('load-maps-btn');
+
+  if (!placeholder || !loadBtn) return;
+
+  loadBtn.addEventListener('click', function () {
+    var src = placeholder.getAttribute('data-map-src');
+    if (!src) return;
+
+    var iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.title = 'Smoke at the Water auf Google Maps';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+
+    var wrapper = placeholder.parentNode;
+    wrapper.replaceChild(iframe, placeholder);
   });
 })();

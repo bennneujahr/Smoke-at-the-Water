@@ -13,9 +13,7 @@
   <meta property="og:image"       content="https://smokeatthewater.de/Bilder%20vom%20Imbiss/optimized/bild-imbiss10.jpeg">
 
   <link rel="icon" href="Logos/optimized/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preload" href="Fonts/open-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Lokales SEO -->
@@ -131,23 +129,24 @@
               </a>
             </div>
 
-            <!-- Google Maps -->
+            <!-- Google Maps (2-Klick-Lösung: wird erst nach Einwilligung geladen) -->
             <div class="map-embed" aria-label="Standort auf der Karte">
-              <!--
-                TODO: Google Maps Embed-URL einsetzen.
-                Anleitung:
-                1. Gehe zu maps.google.com
-                2. Suche "Zippendorfer Strand Schwerin"
-                3. Klicke auf "Teilen" → "Karte einbetten"
-                4. Kopiere die iframe-URL und ersetze SRC_HIER unten
-              -->
-              <iframe
-                title="Smoke at the Water auf Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.3!2d11.4539735!3d53.6025554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47add71403a776d1:0xa7981cd7618602ea!2sSmoke+at+the+Water!5e0!3m2!1sde!2sde!4v1711000000000!5m2!1sde!2sde"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              <div
+                class="map-placeholder"
+                id="maps-optin"
+                data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.3!2d11.4539735!3d53.6025554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47add71403a776d1:0xa7981cd7618602ea!2sSmoke+at+the+Water!5e0!3m2!1sde!2sde!4v1711000000000!5m2!1sde!2sde"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <p>
+                  Um die Karte anzuzeigen, klicke auf „Karte laden".<br>
+                  Dabei werden Daten an Google (USA) übertragen.<br>
+                  Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.
+                </p>
+                <button type="button" class="btn btn--primary" id="load-maps-btn">Karte laden</button>
+              </div>
             </div>
 
           </div>
