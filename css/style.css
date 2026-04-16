@@ -1230,6 +1230,44 @@ p  { line-height: 1.75; max-width: 65ch; }
   color: var(--color-amber-dark);
 }
 
+/* ── 13d-3. APP PROMO ── */
+.app-promo__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+}
+.app-store-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: var(--space-md);
+}
+.btn--store {
+  background-color: var(--color-blue-dark);
+  color: var(--color-white);
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--r-md);
+  font-weight: 700;
+  font-size: 1rem;
+  min-height: 52px;
+}
+.btn--store svg {
+  width: 22px;
+  height: 22px;
+}
+.btn--store:hover {
+  background-color: var(--color-amber);
+  box-shadow: 0 4px 20px rgba(232,137,42,0.35);
+  transform: translateY(-1px);
+}
+.app-promo__hint {
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  font-style: italic;
+  text-align: center;
+}
+
 /* ── 13e. BANNER CTA ── */
 .banner-cta-wrap {
   display: flex;
