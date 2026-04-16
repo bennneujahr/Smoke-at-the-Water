@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static website for **Smoke at the Water** – a beach food stall (Strandimbiss) at Zippendorfer Strand in Schwerin, Germany. Domain: `https://smokeatthewater.de`. Hosted on GitHub Pages. No build step, no framework, no package manager.
 
+Das Projekt ist nur die **Informations-Website**. Das **Buchungssystem** läuft separat auf `buchung.smokeatthewater.de` (Vercel + Supabase + Resend + Stripe) und ist NICHT Teil dieses Repos. Die `events.html` lädt Event-Daten live aus Supabase – einziger Live-Datenfluss der Hauptseite.
+
 ## How to preview
 
 Open any HTML file directly in a browser – no local server needed:
@@ -41,15 +43,17 @@ Navigation and footer HTML are duplicated across all pages (static site, no incl
 Current navigation order: **Speisekarte · Events · Beach-Rental · Kontakt**
 
 ```
-css/style.css     – All styles (Custom Properties → Reset → Layout → Components → Pages)
-js/main.js        – Three IIFEs: initNav, initScrollReveal, initLightbox
+css/style.css     – All styles (Section 0. Webfonts → 1. Custom Properties → Reset → Layout → Components → Pages)
+js/main.js        – Four IIFEs: initNav, initScrollReveal, initLightbox, initMapsOptIn
+js/events.js      – Loads events from Supabase on events.html
+Fonts/            – Locally hosted webfonts (Open Sans Variable, Pacifico), loaded via @font-face
 index.html        – Hero, Über uns, Event-Banner-CTA, Galerie, CTA-Banner
 speisekarte.html  – 4 clickable menu cards (lightbox)
-kontakt.html      – Opening hours table, Google Maps iframe, social links
-events.html       – Events 2026: plain blue hero, Herrentag event-card, poster, CTA
+kontakt.html      – Opening hours table, Google Maps (2-Klick-Opt-In), social links
+events.html       – Events 2026: plain blue hero, dynamisch via Supabase, CTA
 verleih.html      – SUP & Strandliegen: plain blue hero, poster, info-cards, CTA
-impressum.html    – Legal (vollständig ausgefüllt)
-datenschutz.html  – GDPR text (vollständig ausgefüllt)
+impressum.html    – Legal (vollständig, inkl. Verweis auf Buchungs-Subdomain)
+datenschutz.html  – DSGVO-Text (Stand April 2026, deckt Supabase + Vercel + Resend + Stripe + GitHub Pages ab)
 ```
 
 Assets live in German-named folders at the root – paths with spaces work fine in HTML `src`/`href` attributes, but **must be quoted in CSS `url()`**:
@@ -105,6 +109,17 @@ The lightbox (`#lightbox`) is triggered by any element with class `.gallery-item
 
 Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.is-visible` when the element enters the viewport. Staggered delays: `.reveal-delay-1`, `.reveal-delay-2`, `.reveal-delay-3`.
 
+Maps-Opt-In: `initMapsOptIn` ersetzt den Platzhalter `#maps-optin` beim Klick auf `#load-maps-btn` durch ein `<iframe>` mit der URL aus dem `data-map-src`-Attribut. Nicht die `data-map-src` entfernen oder das Markup umbenennen, sonst bleibt die Karte leer.
+
+## Webfonts
+
+Fonts liegen lokal in `Fonts/` und werden über `@font-face` in **Section 0** von `style.css` eingebunden (DSGVO-konform, keine Requests an Google).
+- `open-sans-latin.woff2` – Variable Font, Weights 300–800
+- `open-sans-latin-ext.woff2` – Variable Font, Latin-Extended
+- `pacifico-latin.woff2` + `pacifico-latin-ext.woff2` – Headings
+
+**Niemals `fonts.googleapis.com`- oder `fonts.gstatic.com`-Links einfügen** – alle 7 HTML-Seiten laden Fonts lokal via `<link rel="preload" href="Fonts/open-sans-latin.woff2" as="font" type="font/woff2" crossorigin>`.
+
 ## When adding new images
 
 1. Originale in den passenden Ordner legen (z.B. `Bilder vom Imbiss/`).
@@ -121,8 +136,27 @@ Scroll-reveal animations use class `.reveal` (invisible by default). JS adds `.i
 4. Add geo meta tags, canonical link, and (for main content pages) JSON-LD structured data – see `index.html` as reference.
 5. Include `<div id="lightbox" …>` before `</body>` only if the page uses `.gallery-item` or `.menu-card` triggers.
 6. Link `css/style.css` and `js/main.js` from the root (not a subfolder).
+7. Font-Preload einbinden: `<link rel="preload" href="Fonts/open-sans-latin.woff2" as="font" type="font/woff2" crossorigin>` – keine Google-Fonts-Links.
+
+## Datenschutz & DSGVO
+
+Die öffentliche `datenschutz.html` dokumentiert alle Drittanbieter. Interne DSGVO-Unterlagen (**nicht ins Repo committen**) liegen eine Ebene höher unter:
+
+```
+../Datenschutz/
+├── README.md
+├── Verarbeitungsverzeichnis.md   ← Art. 30 DSGVO
+└── AVV/                          ← signierte DPAs als PDF
+```
+
+Bei Änderungen an Datenflüssen (neue Dienste, neue Formulare, neue Supabase-Tabellen mit PII) immer:
+1. `datenschutz.html` aktualisieren (Abschnitte nach dem bestehenden Nummerierungs-Schema)
+2. `../Datenschutz/Verarbeitungsverzeichnis.md` ergänzen
+3. AVV/DPA des neuen Dienstes in `../Datenschutz/AVV/` ablegen
 
 ## Open TODO items
 
 - **Alle Seiten** – `og:url` noch auf `https://smokeatthewater.de/PAGE.html` setzen (aktuell nicht gesetzt)
 - **events.html JSON-LD** – Event-Daten jährlich aktualisieren (aktuell: Sommer 2026)
+- **Benns AVV-Ablage** – PDFs der DPAs (Supabase signiert, Vercel/Resend/Stripe/GitHub) unter `../Datenschutz/AVV/` ablegen
+- **Supabase-Region** – im Dashboard prüfen und ggf. in `datenschutz.html` Abschnitt 7/8 präzisieren (EU vs. USA/Singapur)
