@@ -1373,6 +1373,45 @@ p  { line-height: 1.75; max-width: 65ch; }
 }
 
 
+/* ── 13g. NOTICE BOX ── */
+.notice {
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) 1.25rem;
+  background-color: var(--color-sand);
+  border-left: 4px solid var(--color-amber);
+  border-radius: var(--r-md);
+  color: var(--color-blue-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.notice strong {
+  color: var(--color-blue);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.notice a {
+  color: var(--color-amber-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.notice a:hover,
+.notice a:focus-visible {
+  color: var(--color-blue);
+}
+.notice--warning {
+  /* Variant hook – dieselbe Basis, kann bei Bedarf verschärft werden */
+}
+@media (max-width: 480px) {
+  .notice {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+
 /* ── 14. LIGHTBOX ── */
 .lightbox {
   position: fixed;
