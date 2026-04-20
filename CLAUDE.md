@@ -4,9 +4,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this project is
 
-Static website for **Smoke at the Water** – a beach food stall (Strandimbiss) at Zippendorfer Strand in Schwerin, Germany. Domain: `https://smokeatthewater.de`. Hosted on GitHub Pages. No build step, no framework, no package manager.
+**Smoke at the Water** – Strandimbiss am Zippendorfer Strand in Schwerin. Das Gesamtprojekt besteht aus **zwei Repos**, die zusammen betrachtet werden:
 
-Das Projekt ist nur die **Informations-Website**. Das **Buchungssystem** läuft separat auf `buchung.smokeatthewater.de` (Vercel + Supabase + Resend + Stripe) und ist NICHT Teil dieses Repos. Die `events.html` lädt Event-Daten live aus Supabase – einziger Live-Datenfluss der Hauptseite.
+1. **Informations-Website** (dieses Repo, CWD hier)
+   - Domain: `https://smokeatthewater.de`
+   - Hosting: GitHub Pages (Auto-Deploy bei `git push` auf `main`)
+   - Stack: Plain HTML/CSS/JS, kein Build-Step, kein Framework, kein Package-Manager
+   - GitHub: `bennneujahr/Smoke-at-the-Water`
+
+2. **Buchungssystem** (Schwester-Repo, liegt lokal unter `../Beach Rental/Buchungssystem/`)
+   - Domain: `https://buchung.smokeatthewater.de`
+   - Hosting: Vercel (`beach-rental` Projekt, Auto-Deploy via Git oder `vercel deploy --prod`)
+   - Stack: Next.js 16 (App Router) + TypeScript + Tailwind v4 + Supabase (EU, `eu-central-1`) + Stripe + Resend
+   - GitHub: `bennneujahr/beach-rental-buchungssystem` (privat)
+   - Eigene `CLAUDE.md` im Unterordner mit Details zu Architektur, Tabellen und API-Routes
+
+### Cross-Repo-Arbeitsweise
+
+Beide Repos werden vom selben Entwickler (Benn) betreut. Änderungen, die beide Seiten betreffen (z.B. Nutzungsbedingungen auf der Info-Site + Checkbox im Buchungsformular, oder neue Event-Art auf `events.html` + neue Supabase-Tabelle), werden **in einer einzigen Session** angegangen – nicht über getrennte Terminal-Sessions. Wenn eine Änderung das Buchungs-Repo betrifft:
+
+1. **CWD nicht wechseln mit `cd`** – absolute Pfade nutzen, damit der Shell-State stabil bleibt
+2. **Zwei Commits in zwei Repos** – jedes Repo hat seine eigene `.git`, also separate `git add`/`commit`/`push` je Repo
+3. **Deploy-Verifikation separat** – GitHub Pages (~1–2 Min) vs. Vercel Build (~1–3 Min)
+4. **Versionsgleichheit bei verknüpften Änderungen** – z.B. wenn sich die `nutzungsbedingungen.html` ändert, muss im Buchungs-Repo die `terms_version_accepted`-String angepasst werden
+
+### Datenfluss zwischen beiden Seiten
+
+- `events.html` (Info-Site) lädt live Event-Daten aus Supabase des Buchungs-Projekts
+- `verleih.html` (Info-Site) verlinkt auf `buchung.smokeatthewater.de` für SUP-/Strandliegen-Buchungen
+- `nutzungsbedingungen.html` (Info-Site) wird vom Buchungs-Formular referenziert (Pflicht-Checkbox)
+- Bestätigungs-E-Mails (Resend, aus Buchungs-Repo) linken zurück auf Info-Site (Impressum, Datenschutz, Nutzungsbedingungen)
 
 ## How to preview
 
