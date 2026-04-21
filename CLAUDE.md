@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 2. **Buchungssystem** (Schwester-Repo, liegt lokal unter `../Beach Rental/Buchungssystem/`)
    - Domain: `https://buchung.smokeatthewater.de`
-   - Hosting: Vercel (`beach-rental` Projekt, Auto-Deploy via Git oder `vercel deploy --prod`)
+   - Hosting: Vercel (`beach-rental` Projekt, **Auto-Deploy bei `git push origin main`**, ~40s Build; manuell nur bei Bedarf via `vercel --cwd "<pfad>" deploy --prod --yes`)
    - Stack: Next.js 16 (App Router) + TypeScript + Tailwind v4 + Supabase (EU, `eu-central-1`) + Stripe + Resend
    - GitHub: `bennneujahr/beach-rental-buchungssystem` (privat)
    - Eigene `CLAUDE.md` im Unterordner mit Details zu Architektur, Tabellen und API-Routes
@@ -25,8 +25,8 @@ Beide Repos werden vom selben Entwickler (Benn) betreut. Änderungen, die beide 
 
 1. **CWD nicht wechseln mit `cd`** – absolute Pfade nutzen, damit der Shell-State stabil bleibt
 2. **Zwei Commits in zwei Repos** – jedes Repo hat seine eigene `.git`, also separate `git add`/`commit`/`push` je Repo
-3. **Deploy-Verifikation separat** – GitHub Pages (~1–2 Min) vs. Vercel Build (~1–3 Min)
-4. **Versionsgleichheit bei verknüpften Änderungen** – z.B. wenn sich die `nutzungsbedingungen.html` ändert, muss im Buchungs-Repo die `terms_version_accepted`-String angepasst werden
+3. **Deploy-Verifikation separat** – GitHub Pages (~1–2 Min) vs. Vercel Build (~40 s – 1 Min). Bei Vercel-Plattform-Outages hängen Auto-Deploys still (kein „failed"-Eintrag im Dashboard) – dann `https://www.vercel-status.com/api/v2/status.json` prüfen und nach Recovery manuell anstoßen.
+4. **Versionsgleichheit bei verknüpften Änderungen** – z.B. wenn sich `nutzungsbedingungen.html` inhaltlich ändert, muss im Buchungs-Repo die Konstante `TERMS_VERSION` in `src/lib/constants.ts` auf das neue Datum (`YYYY-MM-DD`) hochgezogen werden. Dieser String landet in `bookings.terms_version` (DB-Spalte) und in der Bestätigungs-E-Mail als „Stand".
 
 ### Datenfluss zwischen beiden Seiten
 
@@ -63,7 +63,7 @@ Ein einfaches `git push` genügt – kein Build-Schritt, kein Dashboard.
 
 ## Architecture
 
-**One shared CSS file, one shared JS file, seven HTML pages – no templating.**
+**One shared CSS file, one shared JS file, eight HTML pages – no templating.**
 
 Navigation and footer HTML are duplicated across all pages (static site, no includes).
 
@@ -81,6 +81,7 @@ events.html       – Events 2026: plain blue hero, dynamisch via Supabase, CTA
 verleih.html      – SUP & Strandliegen: plain blue hero, poster, info-cards, CTA
 impressum.html    – Legal (vollständig, inkl. Verweis auf Buchungs-Subdomain)
 datenschutz.html  – DSGVO-Text (Stand April 2026, deckt Supabase + Vercel + Resend + Stripe + GitHub Pages ab)
+nutzungsbedingungen.html – AGB SUP-/Strandliegen-Verleih (noindex, follow; aktueller Stand 21. April 2026; vom Buchungsformular via Pflicht-Checkbox referenziert)
 ```
 
 Assets live in German-named folders at the root – paths with spaces work fine in HTML `src`/`href` attributes, but **must be quoted in CSS `url()`**:
