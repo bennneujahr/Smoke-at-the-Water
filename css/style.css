@@ -1374,17 +1374,20 @@ p  { line-height: 1.75; max-width: 65ch; }
 
 
 /* ── 13g. NOTICE BOX ── */
+/* Optik folgt .info-card (Section 13c), damit der Kasten sich nativ
+   als dritte Karte unter den info-cards einfügt. Keine max-width und
+   kein border-left, damit er bündig mit dem Grid darüber sitzt. */
 .notice {
-  max-width: 680px;
-  margin-inline: auto;
-  margin-bottom: var(--space-md);
-  padding: var(--space-sm) 1.25rem;
+  margin-top: var(--space-md);
+  padding: var(--space-md);
   background-color: var(--color-sand);
-  border-left: 4px solid var(--color-amber);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xl);
   color: var(--color-blue-dark);
-  font-size: 0.95rem;
   line-height: 1.6;
+  transition: box-shadow var(--t-base);
+}
+.notice:hover {
+  box-shadow: 0 6px 24px rgba(26,58,92,0.10);
 }
 .notice strong {
   color: var(--color-blue);
@@ -1403,12 +1406,6 @@ p  { line-height: 1.75; max-width: 65ch; }
 }
 .notice--warning {
   /* Variant hook – dieselbe Basis, kann bei Bedarf verschärft werden */
-}
-@media (max-width: 480px) {
-  .notice {
-    padding: 0.875rem 1rem;
-    font-size: 0.9rem;
-  }
 }
 
 
